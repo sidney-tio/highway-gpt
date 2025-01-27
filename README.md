@@ -14,8 +14,9 @@ The project explores the application of highway networks within the GPT architec
 
 ## Model Sources
 
-- GPT2 base model: [placeholder]
-- enwiki8 preprocessing code: [placeholder2]
+- GPT2 base model: [nanoGPT implementation](https://github.com/karpathy/nanoGPT/blob/master/model.py)
+- enwiki8 preprocessing code: [AWD-LSTM preprocessing script](https://raw.githubusercontent.com/salesforce/awd-lstm-lm/master/data/enwik8/prep_enwik8.py)
+- Data loader code: [Transformer-sequential](https://github.com/facebookresearch/transformer-sequential/blob/main/data.py)
 
 ## Setup
 
