@@ -1,0 +1,44 @@
+defaults:
+  - _self_
+  - model: gpt2
+
+# Model configuration
+model:
+  block_size: 128
+  vocab_size: 50304 # GPT-2 vocab_size of 50257, padded up to nearest multiple of 64 for efficiency
+  n_layer: 12
+  n_head: 12
+  n_embd: 768
+  dropout: 0.2
+  bias: false
+  block_type: vanilla
+
+# Training configuration
+training:
+  batch_size: 1024                          # Batch size
+  data: "data"                            # Path to dataset
+  eval_interval: 2000                     # Evaluation interval
+  eval_iters: 200                         # Number of iterations for evaluation
+  grad_clip: 1.0                          # Gradient clipping
+  gradient_accumulation_steps: 1          # Gradient accumulation steps
+  lr: 6e-4                                # Learning rate
+  lr_decay_iters: 5000                    # Learning rate decay iterations
+  min_lr: 1e-5                            # Minimum learning rate
+  n_iters: 100000                         # Number of iterations
+  warmup_iters: 500                       # Warmup iterations
+  weight_decay: 1e-1
+  beta1: 0.9
+  beta2: 0.95
+
+# Additional settings
+settings:
+  compile: true                           # Whether to compile the model
+  no_cuda: false                          # Disable CUDA
+  seed: 42                                # Random seed
+  heatmap : true
+  test: false
+
+# Logging and saving
+logging:
+  log_dir: "outputs"                # Directory for logs
+  save_dir: "/path/to/checkpoints"        # Directory for saving checkpoints
